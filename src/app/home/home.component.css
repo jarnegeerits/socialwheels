@@ -1,5 +1,66 @@
-.jumbotron {
-  background-color: #f4511e; /* Orange */
+.masthead {
+  background: url(../../assets/images/mast.jpg);
+  padding-bottom: 30%;
+  width: 100%;
+  height: 100%;
+  background-size: stretch;
+  background-position: left;
+}
+.cardrow {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.headrow {
+  padding-top: 15%;
+}
+h1 {
+  background-color: #f4511e;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.btn-primary {
+  background-color: #f4511e;
+  border-color: #f4511e;
+}
+.logo {
+  font-size: 100px;
+}
+.card {
+  text-align: center;
+  margin: 5%;
+}
+.container {
+  padding-top: 0px;
+}
+.showcase-text {
+  padding-left: 10%;
+}
+.showcase-img {
+  width: 60%;
+  height: 40%;
+  background-size: cover;
+  background-position: left;
+}
+.img1 {
+  background: url(../../assets/images/show1.jpg);
+  padding-bottom: 25%;
+  width: 60%;
+  height: 40%;
+  background-size: cover;
+  background-position: left;
+}
+.img2 {
+  background: url(../../assets/images/show2.jpg);
+  padding-bottom: 25%;
+  width: 60%;
+  height: 40%;
+  background-size: cover;
+  background-position: left;
+}
+/* .jumbotron {
+  background-color: #f4511e;
   color: #ffffff;
   padding: 100px 25px;
 }
@@ -20,3 +81,4 @@ h4 {
   padding: 10px 50px;
   margin: 10px;
 }
+*/

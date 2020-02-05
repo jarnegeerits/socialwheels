@@ -1,4 +1,11 @@
-<div class="container-fluid">
+<nav class="navbar navbar-light bg-light static-top">
+  <div class="container">
+    <a routerLink="home" class="navbar-brand nav-item nav-link"><h2>{{title}}</h2></a>
+    <a routerLink="login" class=" btn-primary btn nav-item nav-link align-right">Login</a>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<!-- <div class="container-fluid">
   <h1>{{ title }}</h1>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,5 +30,5 @@
 
     <router-outlet></router-outlet>
   </div>
-</div>
+</div> -->
 
