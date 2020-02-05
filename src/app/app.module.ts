@@ -9,6 +9,20 @@ import { UsersComponent } from './users/users.component';
 import { LoginComponent } from './login/login.component';
 import { DashComponent } from './dash/dash.component';
 
+import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'dash', component: DashComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'users', component: UsersComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +34,10 @@ import { DashComponent } from './dash/dash.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

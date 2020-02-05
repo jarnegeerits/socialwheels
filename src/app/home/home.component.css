@@ -1,0 +1,22 @@
+.jumbotron {
+  background-color: #f4511e; /* Orange */
+  color: #ffffff;
+  padding: 100px 25px;
+}
+.logo {
+  font-size: 200px;
+}
+.descContainer {
+  background-color: lightgrey;
+  padding: 10px 25px;
+}
+h2 {
+  padding: 10px 10px;
+}
+h4 {
+  padding: 10px 10px;
+}
+.btn-secondary {
+  padding: 10px 50px;
+  margin: 10px;
+}
