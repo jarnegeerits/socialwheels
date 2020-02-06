@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // Font awesome imports
 import { faSignal, faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookSquare, faTwitterSquare, faInstagram } from '@fortawesome/fontawesome-free-brands';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,12 @@ export class HomeComponent implements OnInit {
   // font awesome icons doorgeven naar html, zet non-fa dingen onder volgende comment
   faSignal = faSignal;
   faGlobeEurope = faGlobeEurope;
+  faFacebookSquare = faFacebookSquare;
+  faTwitterSquare = faTwitterSquare;
+  faInstagram = faInstagram;
 
   // BELANGRIJKE ONZIN NA DEZE COMMENT
-  constructor(private router: Router) { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }

@@ -27,19 +27,30 @@ h1 {
 .logo {
   font-size: 100px;
 }
-.card {
+.logoSocial {
+  font-size: 40px;
+  color: white;
+}
+/* .logo:hover {
+  color: lightgray;
+} */
+.logocard {
   text-align: center;
   margin: 5%;
+  background-color: slategrey;
 }
-.container {
+.logocard:hover {
+  background-color: #f4511e;
+}
+.container-fluid {
   padding-top: 0px;
 }
 .showcase-text {
   padding-left: 10%;
 }
 .showcase-img {
-  width: 60%;
-  height: 40%;
+  width: 100%;
+  height: 60%;
   background-size: cover;
   background-position: left;
 }
@@ -59,26 +70,30 @@ h1 {
   background-size: cover;
   background-position: left;
 }
-/* .jumbotron {
+.img3 {
+  background: url(../../assets/images/show3.jpg);
+  padding-bottom: 25%;
+  width: 60%;
+  height: 40%;
+  background-size: cover;
+  background-position: left;
+}
+.footer {
   background-color: #f4511e;
-  color: #ffffff;
-  padding: 100px 25px;
+  margin-top: 3%;
 }
-.logo {
-  font-size: 200px;
+.footerlinks {
+  color: #f5411e;
 }
-.descContainer {
-  background-color: lightgrey;
-  padding: 10px 25px;
+.footerdiv {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: white;
 }
-h2 {
-  padding: 10px 10px;
+.copyrights {
+  color: white;
 }
-h4 {
-  padding: 10px 10px;
+.socialIcons {
+  padding-right: 3%;
 }
-.btn-secondary {
-  padding: 10px 50px;
-  margin: 10px;
-}
-*/
+
