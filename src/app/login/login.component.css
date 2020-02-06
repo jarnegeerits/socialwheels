@@ -1,0 +1,65 @@
+.masthead {
+    background: url(../../assets/images/background-log-in.jpg);
+    padding-bottom: 30%;
+    padding-top: 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+.cardrow {
+padding-top: 5%;
+padding-bottom: 5%;
+}
+.headrow {
+padding-top: 15%;
+}
+h1 {
+background-color: #f4511e;
+padding-top: 5px;
+padding-bottom: 10px;
+padding-left: 20px;
+padding-right: 20px;
+}
+.btn-primary {
+background-color: #f4511e;
+border-color: #f4511e;
+}
+.logo {
+font-size: 100px;
+}
+.card {
+text-align: center;
+margin: 5%;
+}
+.container {
+padding-top: 0px;
+}
+.showcase-text {
+padding-left: 10%;
+}
+.showcase-img {
+width: 60%;
+height: 40%;
+background-size: cover;
+background-position: left;
+}
+
+.footer {
+    background-color: #f4511e;
+    margin-top: 3%;
+  }
+  .footerlinks {
+    color: #f5411e;
+  }
+  .footerdiv {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: white;
+  }
+  .copyrights {
+    color: white;
+  }
+  .socialIcons {
+    padding-right: 3%;
+  }
+  
