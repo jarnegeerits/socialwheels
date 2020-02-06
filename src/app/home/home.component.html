@@ -20,10 +20,15 @@
     </div>
   </div>
 </header>
-<div class="container">
+<!--
+  ####################################################################
+  ####  CARDS WITH FONTAWESOME ICONS
+  #####################################################################
+ -->
+<div class="container-fluid">
   <div class="row cardrow justify-content-center">
     <div class="col-sm-auto">
-      <div class="card text-white bg-secondary" style="width: 18rem;">
+      <div class="card text-white logocard" style="width: 18rem;">
         <fa-icon class="logo" [icon]="faSignal"></fa-icon>
         <div class="card-body">
           <h5 class="card-title">Economical</h5>
@@ -32,7 +37,7 @@
       </div>
     </div>
     <div class="col-sm-auto">
-      <div class="card text-white bg-secondary" style="width: 18rem;">
+      <div class="card text-white logocard" style="width: 18rem;">
         <fa-icon class="logo" [icon]="faSignal"></fa-icon>
         <div class="card-body">
           <h5 class="card-title">blablabla</h5>
@@ -41,7 +46,7 @@
       </div>
     </div>
     <div class="col-sm-auto">
-      <div class="card text-white bg-secondary" style="width: 18rem;">
+      <div class="card text-white logocard" style="width: 18rem;">
         <fa-icon class="logo" [icon]="faGlobeEurope"></fa-icon>
         <div class="card-body">
           <h5 class="card-title">blablabla</h5>
@@ -51,10 +56,14 @@
     </div>
   </div>
 </div>
+<!--
+  ###########################################################
+  #### PICTURE SHOWCASE
+  ###########################################################
+ -->
 <section class="showcase">
   <div class="container-fluid p-0">
     <div class="row no-gutters">
-
       <div class="col-lg-6 order-lg-2 text-white showcase-img img1 rounded"></div>
       <div class="col-lg-6 order-lg-1 my-auto showcase-text">
         <h2>Fully Responsive Design</h2>
@@ -69,7 +78,7 @@
       </div>
     </div>
     <div class="row no-gutters">
-      <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+      <div class="col-lg-6 order-lg-2 text-white showcase-img img1 rounded"></div>
       <div class="col-lg-6 order-lg-1 my-auto showcase-text">
         <h2>Easy to Use &amp; Customize</h2>
         <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
@@ -77,36 +86,53 @@
     </div>
   </div>
 </section>
-<!-- <div class="jumbotron text-center">
-  <h1>Responsible mobilty for a responsible world</h1>
-  <p>Marketing onzin hier</p>
-</div>
-<div class="descContainer container-fluid rounded">
-  <div class="row">
-    <div class="col-sm-8 text-left">
-      <h2>Our Promise:</h2>
-      <h4>
-        bla bla bla <br>
-        bla bla bla <br>
-      </h4>
-      <br><br>
-      <button type="button" class="btn btn-secondary">Get started</button>
-    </div>
-    <div class="col-sm-4 text-right">
-      <fa-icon class="logo" [icon]="faSignal"></fa-icon>
+<!--
+  ####################################################################################################
+  ### FOOTER
+  ####################################################################################################
+ -->
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+        <ul class="list-inline mb-2 footerdiv rounded">
+          <li class="list-inline-item">
+            <a routerLink="home" class="nav-item nav-link footerlinks">Home</a> <!-- DEZE ROUTER LINKS ZIJN DOOD? -->
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a routerLink="contact" class="nav-item nav-link footerlinks">Contact</a> <!-- DEZE DUS OOK?? -->
+          </li> <!-- pagina's zijn wel bereikbaar via url als in localhost:4200/contact -->
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a class="footerlinks" href="#">Terms of Use</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a class="footerlinks" href="#">Privacy Policy</a>
+          </li>
+        </ul>
+        <p class="copyrights">&copy; Your Website 2019. All Rights Reserved.</p>
+      </div>
+      <div class="col-lg-6 h-100 text-center text-lg-right my-auto socialIcons">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-3">
+            <a href="#">
+              <fa-icon class="logoSocial" [icon]="faFacebookSquare"></fa-icon>
+            </a>
+          </li>
+          <li class="list-inline-item mr-3">
+            <a href="#">
+              <fa-icon class="logoSocial" [icon]="faTwitterSquare"></fa-icon>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <fa-icon class="logoSocial" [icon]="faInstagram"></fa-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-<br>
-<div class="descContainer container-fluid bg-grey rounded">
-  <div class="row">
-    <div class="col-sm-4 text-left">
-      <fa-icon class="logo" [icon]="faGlobeEurope"></fa-icon>
-    </div>
-    <div class="col-sm-8 text-right">
-      <h2>Our goal:</h2>
-      <h4><strong>MISSION:</strong> Our mission bla bla bla</h4>
-      <p><strong>VISION:</strong> Our vision bla bla bla</p>
-    </div>
-  </div>
-</div> -->
+</footer>
