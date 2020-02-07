@@ -1,19 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { faFacebookSquare, faTwitterSquare, faInstagram } from '@fortawesome/fontawesome-free-brands';
-
+import { AuthService } from '../../shared/services/auth.service.service';
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+selector: 'app-login',
+templateUrl: './login.component.html',
+styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  faFacebookSquare = faFacebookSquare;
-  faTwitterSquare = faTwitterSquare;
-  faInstagram = faInstagram;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+ constructor(private authService: AuthService) { }
+ ngOnInit() {}
 }
