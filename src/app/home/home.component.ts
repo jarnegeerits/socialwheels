@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FooterComponent } from '../footer/footer.component';
 // Font awesome imports
 import { faSignal, faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookSquare, faTwitterSquare, faInstagram } from '@fortawesome/fontawesome-free-brands';
