@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { LoginComponent } from './login/login.component';
 import { DashComponent } from './dash/dash.component';
+import { FooterComponent } from './footer/footer.component';
 
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,7 +32,8 @@ const routes: Routes = [
     HomeComponent,
     UsersComponent,
     LoginComponent,
-    DashComponent
+    DashComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
