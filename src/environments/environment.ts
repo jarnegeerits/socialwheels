@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyBQin8HGEUsTpM8ChHw79xSK_4pvVuSqCE',
+    authDomain: 'epfesocialwheels.firebaseapp.com',
+    databaseURL: 'https://epfesocialwheels.firebaseio.com',
+    projectId: 'epfesocialwheels',
+    storageBucket: 'epfesocialwheels.appspot.com',
+    messagingSenderId: '384670373690',
+    appId: '1:384670373690:web:3ff732133e547ac070a203',
+    measurementId: 'G-3SLNPLE9XT'
+  }
 };
 
 /*
