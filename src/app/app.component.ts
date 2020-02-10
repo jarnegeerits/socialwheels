@@ -12,15 +12,15 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 
- 
+
 export class AppComponent {
   title = 'SocialWheels';
   constructor(public authService: AuthService, private http:HttpClient) {}
   ngOnInit() {
-    this.http
-    .get<Expenses[]>('../assets/data/cars.json')
-    .pipe (
-      tap (result => console.log('opgehaald via JSON: ', result))
-      .subscribe(expenses => this.expenses = expenses)
-
-};
+    // this.http
+    // .get<Expenses[]>('../assets/data/cars.json')
+    // .pipe (
+    //   tap (result => console.log('opgehaald via JSON: ', result))
+    //   .subscribe(expenses => this.expenses = expenses)
+  }
+}
