@@ -22,6 +22,20 @@ export class AuthService {
       }
     });
   }
+  register(email: string, password: string) {
+    this.afAuth
+      .auth
+      .createUserWithEmailAndPassword(email, password)
+      .catch(err => {
+        swal.fire({
+          title: 'Error!',
+          text: err.message,
+          icon: 'error',
+          confirmButtonText: 'Cool'
+        });
+    });
+  }
+
   login(email: string, password: string) {
     this.afAuth
       .auth
@@ -63,18 +77,3 @@ export class AuthService {
     return user !== null;
   }
 }
-
-// async login(email: string, password: string) {
-  //   try {
-  //     await this.afAuth.auth.signInWithEmailAndPassword(email, password);
-  //     this.router.navigate(['/home']);
-  //     console.log('sign in done');
-  //   } catch (e) {
-  //     alert('Error!' + e.message);
-  //     console.log('login failed');
-  //     }
-  //   }
-
-
-
-        // window.history.back();
