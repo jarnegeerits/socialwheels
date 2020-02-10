@@ -1,0 +1,53 @@
+.bg-image {
+  background: url(../../assets/images/background-log-in.jpg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.loginCol {
+  background-color: #f4511e;
+  height: 100%;
+}
+.loginSection {
+  padding-top: 40%;
+  padding-bottom: 60%;
+}
+.loginHeader {
+  background-color:white;
+  padding-left: 12%;
+  padding-right: 8%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+.greeter {
+  text-align: center;
+}
+.form-label-group {
+  margin-bottom: 8%;
+}
+.btn-primary {
+  margin-top: 10%;
+  background-color: #f4511e;
+  border-color: #f4511e;
+  }
+.logoSocial {
+  font-size: 40px;
+  color: white;
+}
+.footer {
+  background-color: #f4511e;
+}
+.footerlinks {
+  color: #f5411e;
+}
+.footerdiv {
+  padding: 2%;
+  margin-top: 2%;
+  background-color: white;
+}
+.copyrights {
+  color: white;
+}
+.socialIcons {
+  padding-right: 10%;
+}

@@ -10,7 +10,9 @@ import swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
+
   user: User;
   constructor(public afAuth: AngularFireAuth, public router: Router) {
     this.afAuth.authState.subscribe(user => {
@@ -33,6 +35,13 @@ export class AuthService {
           icon: 'error',
           confirmButtonText: 'Cool'
         });
+    });
+    swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'You are now registered and logged in!',
+      showConfirmButton: false,
+      timer: 2000
     });
   }
 
