@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../shared/services/auth.service.service';
 
 
 @Component({
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'SocialWheels';
+  constructor(public authService: AuthService) {}
+  ngOnInit() {}
 }

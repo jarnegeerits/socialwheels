@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+
+// Components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
@@ -12,15 +12,16 @@ import { LoginComponent } from './login/login.component';
 import { DashComponent } from './dash/dash.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { auth } from 'firebase/app';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { User } from 'firebase';
-
 import { Routes, RouterModule, Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { environment } from 'src/environments/environment';
-// import { TasksService } from '../shared/services/tasks.service';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AuthService } from '../shared/services/auth.service.service';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,8 +29,8 @@ const routes: Routes = [
   { path: 'dash', component: DashComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'users', component: UsersComponent },
-  { path: 'login', component: LoginComponent },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'login', component: LoginComponent }
+  // { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -48,10 +49,11 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
     FontAwesomeModule,
-    AngularFireModule.initializeApp(environment.firebase), // Dit moest env.firebase zijn _
-    AngularFireAuthModule // ipv config aangezien config in de environment.ts file staat
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule
     ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
