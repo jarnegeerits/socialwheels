@@ -3,9 +3,13 @@ import { Router } from '@angular/router';
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
+import { Cars, Users } from '../models/user.models'
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 // import * as firebase from 'firebase/app';
 import swal from 'sweetalert2';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +18,7 @@ import swal from 'sweetalert2';
 export class AuthService {
 
   user: User;
-  constructor(public afAuth: AngularFireAuth, public router: Router) {
+  constructor(public afAuth: AngularFireAuth, public router: Router, private http: HttpClient) {
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.user = user;
@@ -85,4 +89,15 @@ export class AuthService {
     const user = JSON.parse(localStorage.getItem('user'));
     return user !== null;
   }
-}
+
+  getCars(): Observable<any[]>{
+      return this.http
+      .get<Cars[]>('../assets/data/user.model.ts')
+      .pipe();
+      }
+   getUsers(): Observable<any[]>{
+      return this.http
+      .get<Users[]>('../assets/data/user.model.ts')
+      .pipe();
+      }
+   }
