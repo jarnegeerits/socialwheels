@@ -11,6 +11,7 @@ import { UsersComponent } from './users/users.component';
 import { LoginComponent } from './login/login.component';
 import { DashComponent } from './dash/dash.component';
 import { FooterComponent } from './footer/footer.component';
+import { RegisterComponent } from './register/register.component';
 
 import { Routes, RouterModule, Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,13 +25,15 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from '../shared/services/auth.service.service';
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'dash', component: DashComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'users', component: UsersComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent }
   // { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
@@ -42,7 +45,8 @@ const routes: Routes = [
     UsersComponent,
     LoginComponent,
     DashComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

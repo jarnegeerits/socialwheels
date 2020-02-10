@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
-import { Cars } from '../models/user.models'
+import { Cars, Users } from '../models/user.models'
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -27,6 +27,20 @@ export class AuthService {
       }
     });
   }
+  register(email: string, password: string) {
+    this.afAuth
+      .auth
+      .createUserWithEmailAndPassword(email, password)
+      .catch(err => {
+        swal.fire({
+          title: 'Error!',
+          text: err.message,
+          icon: 'error',
+          confirmButtonText: 'Cool'
+        });
+    });
+  }
+
   login(email: string, password: string) {
     this.afAuth
       .auth
@@ -74,22 +88,8 @@ export class AuthService {
       .pipe();
       }
    getUsers(): Observable<any[]>{
-      return this. 
-   }   
-     
-  }
-
-// async login(email: string, password: string) {
-  //   try {
-  //     await this.afAuth.auth.signInWithEmailAndPassword(email, password);
-  //     this.router.navigate(['/home']);
-  //     console.log('sign in done');
-  //   } catch (e) {
-  //     alert('Error!' + e.message);
-  //     console.log('login failed');
-  //     }
-  //   }
-
-
-
-        // window.history.back();
+      return this.http
+      .get<Users[]>('../assets/data/user.model.ts')
+      .pipe();
+      }
+   }

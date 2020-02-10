@@ -1,0 +1,30 @@
+<div class="container-fluid bg-image">
+  <div class="row">
+    <div class="col-md-8"></div>
+    <div class="col-md-4 loginCol">
+      <div class="loginSection align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 rounded loginHeader">
+              <h3 class="greeter rounded">Hi there stranger!</h3>
+              <br>
+              <div>
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
+                  #userEmail required autofocus>
+                </div>
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                  #userPassword required>
+                </div>
+                <button type="submit" class="btn btn-block btn-lg btn-primary"
+                (click)="authService.register(userEmail.value, userPassword.value)"
+                >Sign up!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

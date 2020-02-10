@@ -2,14 +2,14 @@
     background: url(../../assets/images/contact2.jpg);
     padding-bottom: 25%;
     background-size: cover;
-    
+
   }
 
 .centered{
     position: absolute;
     top: 53%;
     left: 68%;
-    
+
     transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -32,4 +32,10 @@ input[type=text], select, textarea {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 10px;
+}
+
+.btn-primary {
+  background-color: #f4511e;
+  border-color: #f4511e;
+  text-align: center;
 }
