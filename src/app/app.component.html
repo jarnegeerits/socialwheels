@@ -1,7 +1,13 @@
 <nav class="navbar navbar-light bg-light static-top">
   <div class="container">
     <a routerLink="home" class="navbar-brand nav-item nav-link"><h2>{{title}}</h2></a>
-    <a routerLink="login" class=" btn-primary btn nav-item nav-link align-right">Login</a>
+    <li *ngIf="!authService.isLoggedIn" class="nav-item">
+      <a routerLink="login" class="btn-primary btn nav-item nav-link align-right">Login</a>
+    </li>
+    <li *ngIf="authService.isLoggedIn" class="nav-item">
+      <button class="btn-primary btn nav-item nav-link align-right"
+      (click)="authService.logout()">Logout</button>
+    </li>
   </div>
 </nav>
 

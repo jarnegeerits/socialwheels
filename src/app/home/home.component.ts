@@ -4,6 +4,7 @@ import { FooterComponent } from '../footer/footer.component';
 // Font awesome imports
 import { faSignal, faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookSquare, faTwitterSquare, faInstagram } from '@fortawesome/fontawesome-free-brands';
+import { AuthService } from '../../shared/services/auth.service.service';
 
 @Component({
   selector: 'app-home',
@@ -20,9 +21,12 @@ export class HomeComponent implements OnInit {
   faInstagram = faInstagram;
 
   // BELANGRIJKE ONZIN NA DEZE COMMENT
-  constructor(public router: Router) { }
+  constructor(public router: Router, private authService: AuthService) { }
 
   ngOnInit() {
+    // if (!this.authService.isLoggedIn) {
+    //   this.router.navigate(['/login']);
+    // }
   }
 
 }

@@ -8,15 +8,19 @@
             <div class="col-md-12 rounded loginHeader">
               <h3 class="greeter rounded">Welcome back!</h3>
               <br>
-              <form>
+              <div>
                 <div class="form-label-group">
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
+                  #userEmail required autofocus>
                 </div>
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                  #userPassword required>
                 </div>
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-              </form>
+                <button type="submit" class="btn btn-block btn-lg btn-primary"
+                (click)="authService.login(userEmail.value, userPassword.value)"
+                >Sign in!</button>
+              </div>
             </div>
           </div>
         </div>
