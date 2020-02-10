@@ -1,8 +1,10 @@
 .bg-image {
   background: url(../../assets/images/background-log-in.jpg);
-  background-position: left;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 .loginCol {
   background-color: #f4511e;
@@ -18,6 +20,7 @@
   padding-right: 8%;
   padding-top: 10%;
   padding-bottom: 10%;
+  border-radius: 50px;
 }
 .greeter {
   text-align: center;

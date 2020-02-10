@@ -1,8 +1,10 @@
 .bg-image {
   background: url(../../assets/images/background-log-in.jpg);
-  background-position: left;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 .loginCol {
   background-color: #f4511e;
@@ -13,22 +15,26 @@
   padding-bottom: 60%;
 }
 .loginHeader {
-  background-color:white;
+  background-color:#f4511e;
   padding-left: 12%;
   padding-right: 8%;
   padding-top: 10%;
   padding-bottom: 10%;
+  border-radius: 50px;
 }
 .greeter {
   text-align: center;
+  color: white;
 }
 .form-label-group {
   margin-bottom: 8%;
 }
 .btn-primary {
   margin-top: 10%;
-  background-color: #f4511e;
-  border-color: #f4511e;
+  background-color: white;
+  border-color: grey;
+  border-radius: 15px;
+  color: black;
   }
 .logoSocial {
   font-size: 40px;

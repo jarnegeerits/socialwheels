@@ -13,10 +13,10 @@ import { Cars } from '../shared/models/user.models'
   styleUrls: ['./app.component.css']
 })
 
- 
+
 export class AppComponent implements OnInit {
   title = 'SocialWheels';
-  cars:Cars[];
+  cars: Cars[];
 
   constructor(public authService: AuthService) {}
   ngOnInit() {
