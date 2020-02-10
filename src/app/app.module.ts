@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
@@ -11,9 +12,14 @@ import { LoginComponent } from './login/login.component';
 import { DashComponent } from './dash/dash.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { Routes, RouterModule } from '@angular/router';
+import { auth } from 'firebase/app';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { User } from 'firebase';
+
+import { Routes, RouterModule, Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { environment } from 'src/environments/environment';
 // import { TasksService } from '../shared/services/tasks.service';
 
 const routes: Routes = [
@@ -42,8 +48,8 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
     FontAwesomeModule,
-    // AngularFireModule.initializeApp(config),
-    AngularFireAuthModule
+    AngularFireModule.initializeApp(environment.firebase), // Dit moest env.firebase zijn _
+    AngularFireAuthModule // ipv config aangezien config in de environment.ts file staat
     ],
   providers: [],
   bootstrap: [AppComponent]
