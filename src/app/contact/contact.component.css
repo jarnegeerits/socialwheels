@@ -1,0 +1,35 @@
+.img1 {
+    background: url(../../assets/images/contact2.jpg);
+    padding-bottom: 25%;
+    background-size: cover;
+    
+  }
+
+.centered{
+    position: absolute;
+    top: 53%;
+    left: 68%;
+    
+    transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.con{
+  color: black;
+  font-size: 20px;
+}
+
+input[type=text], select, textarea {
+  width: 60%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.box {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}

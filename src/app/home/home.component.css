@@ -47,13 +47,17 @@ h1 {
   padding-top: 0px;
 }
 .showcase-text {
-  padding-left: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
+  text-align: center;
 }
 .showcase-img {
   width: 100%;
   height: 60%;
   background-size: cover;
   background-position: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 .img1 {
   background: url(../../assets/images/show1.jpg);
