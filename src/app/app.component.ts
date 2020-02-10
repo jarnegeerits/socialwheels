@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/services/auth.service.service';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
+import { Cars } from '../shared/models/user.models'
 // import { Cars } from '../assets/data/cars.json'
 
 
@@ -13,14 +14,15 @@ import { tap } from 'rxjs/operators';
 })
 
  
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'SocialWheels';
-  constructor(public authService: AuthService, private http:HttpClient) {}
-  ngOnInit() {
-    this.http
-    .get<Expenses[]>('../assets/data/cars.json')
-    .pipe (
-      tap (result => console.log('opgehaald via JSON: ', result))
-      .subscribe(expenses => this.expenses = expenses)
+  cars:Cars[];
 
-};
+  constructor(public authService: AuthService) {}
+  ngOnInit() {
+    this.authService.getCars().subscribe(cars => this.cars = cars);
+
+}
+
+
+}
