@@ -90,14 +90,20 @@ export class AuthService {
     return user !== null;
   }
 
-  getCars(): Observable<any[]>{
+  getCars(): Observable<any>{
       return this.http
-      .get<Cars[]>('../assets/data/user.model.ts')
+      .get<Cars>('../assets/data/user.model.ts')
       .pipe();
       }
-   getUsers(): Observable<any[]>{
+
+   getExpenses(): Observable<any[]>{
       return this.http
       .get<Users[]>('../assets/data/user.model.ts')
       .pipe();
       }
+   modifyExpenses(): Observable<any>{
+    return this.http
+    .get<Cars>('../assets/data/user.model.ts')
+    .pipe();
+    }
    }
