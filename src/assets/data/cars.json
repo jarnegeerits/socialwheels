@@ -3,11 +3,19 @@
         {
             "id":1,
             "owner": "Joey",
-            "car": "Buggati Verion",
-            "fuelType": "diesel",
+            "car": "Buggati Veyron",
+            "fuelType": "Benzine",
             "fuelAmount": "50",
             "currentPossess": "Jarne"
-        }
+        },
+        {
+          "id":2,
+          "owner": "Jarne",
+          "car": "Lamborghini Countach",
+          "fuelType": "Benzine",
+          "fuelAmount": "35",
+          "currentPossess": "Jarne"
+      }
 
     ],
 
@@ -17,6 +25,12 @@
             "userName": "Joey",
             "cost": "10000",
             "auto_id": 1
-        }
+        },
+        {
+          "id":2,
+          "userName": "Jarne",
+          "cost": "10000",
+          "auto_id": 2
+      }
     ]
 }

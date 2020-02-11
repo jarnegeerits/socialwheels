@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
-import { Cars, Users } from '../models/user.models'
+import { Cars, Users } from '../models/user.models';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -90,20 +90,20 @@ export class AuthService {
     return user !== null;
   }
 
-  getCars(): Observable<any>{
+  getCars(): Observable<any> {
       return this.http
-      .get<Cars>('../assets/data/user.model.ts')
+      .get<Cars>('../../assets/data/cars.json')
       .pipe();
       }
 
-   getExpenses(): Observable<any[]>{
+   getUsers(): Observable<any[]> {
       return this.http
-      .get<Users[]>('../assets/data/user.model.ts')
+      .get<Users[]>('../../assets/data/cars.json')
       .pipe();
       }
-   modifyExpenses(): Observable<any>{
+   modifyExpenses(): Observable<any> {
     return this.http
-    .get<Cars>('../assets/data/user.model.ts')
+    .get<Cars>('../../assets/data/cars.json')
     .pipe();
     }
-   }
+}
