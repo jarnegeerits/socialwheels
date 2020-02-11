@@ -7,12 +7,12 @@
       </div>
       <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
         <div class="col-12 col-md-12">
-          <li *ngIf="authService.isLoggedIn" class="nav-item">
-          <button routerLink="../dash" type="submit" class="btn btn-lg btn-primary btnSubmit">Go To Dashboard</button> 
-          </li>
-          <li *ngIf="! authService.isLoggedIn" class="nav-item">
-          <button routerLink="../register" type="submit" class="btn btn-lg btn-primary btnSubmit">Sign up!</button>
-          </li>
+            <div *ngIf="authService.isLoggedIn" class="nav-item">
+            <button routerLink="../dash" type="submit" class="btn btn-lg btn-primary btnSubmit">Go To Dashboard</button>
+            </div>
+            <div *ngIf="!authService.isLoggedIn" class="nav-item">
+            <button routerLink="../register" type="submit" class="btn btn-lg btn-primary btnSubmit">Sign up!</button>
+            </div>
         </div>
       </div>
     </div>
