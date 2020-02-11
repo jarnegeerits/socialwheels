@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   faInstagram = faInstagram;
 
   // BELANGRIJKE ONZIN NA DEZE COMMENT
-  constructor(public router: Router, private authService: AuthService) { }
+  constructor(public router: Router, public authService: AuthService) { }
 
   ngOnInit() {
     // if (!this.authService.isLoggedIn) {
