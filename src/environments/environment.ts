@@ -5,14 +5,15 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyBQin8HGEUsTpM8ChHw79xSK_4pvVuSqCE',
-    authDomain: 'epfesocialwheels.firebaseapp.com',
-    databaseURL: 'https://epfesocialwheels.firebaseio.com',
-    projectId: 'epfesocialwheels',
-    storageBucket: 'epfesocialwheels.appspot.com',
-    messagingSenderId: '384670373690',
-    appId: '1:384670373690:web:3ff732133e547ac070a203',
-    measurementId: 'G-3SLNPLE9XT'
+    apiKey: 'AIzaSyB5mr38xHFtxWV5ih26FU7ksCKnfqW2PcY',
+    authDomain: 'epfefire.firebaseapp.com',
+    databaseURL: 'https://epfefire.firebaseio.com',
+    projectId: 'epfefire',
+    storageBucket: 'epfefire.appspot.com',
+    messagingSenderId: '543689837322',
+    appId: '1:543689837322:web:9534086bcbb4076dcd88f3',
+    measurementId: 'G-9Q0P7LTD6F'
+
   }
 };
 

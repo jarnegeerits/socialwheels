@@ -16,8 +16,8 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class AuthService {
-  urllocal = "http://localhost:3000/cars";
-  urllocal2 = "http://localhost:3000/users";
+  urllocal = 'http://localhost:3000/cars';
+  urllocal2 = 'http://localhost:3000/users';
   user: User;
   constructor(public afAuth: AngularFireAuth, public router: Router, private http: HttpClient) {
     this.afAuth.authState.subscribe(user => {
