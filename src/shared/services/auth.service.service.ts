@@ -5,7 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
 import { Cars, Users } from '../models/user.models';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 
 // import * as firebase from 'firebase/app';
 import swal from 'sweetalert2';
@@ -102,9 +102,10 @@ export class AuthService {
       .get<Users[]>(this.urllocal)
       .pipe();
       }
-   modifyExpenses(): Observable<any> {
+   editCost(value): Observable<any> {
     return this.http
     .get<Cars>('../../assets/data/cars.json')
     .pipe();
+    // return this.http.delete(this.urllocal+`/${value}`)
     }
 }
