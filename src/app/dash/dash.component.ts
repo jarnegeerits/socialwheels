@@ -10,13 +10,21 @@ import { Cars, Users } from '../../shared/models/user.models';
   styleUrls: ['./dash.component.css']
 })
 export class DashComponent implements OnInit {
-  public car$: Observable<Cars>;
+  public car$: Observable<Cars[]>;
   public user$: Observable<Users[]>;
 
   constructor(
     public authService: AuthService,
     private router: Router
   ) { }
+
+    editCost(value)
+    {
+      this.authService.editCost(value).subscribe();
+    // ik gebruik de subscribe om de observable uit te voeren
+    this.router.navigate(['/dash']);
+    }
+  
     
   ngOnInit() {
     if (!this.authService.isLoggedIn) { this.router.navigate(['/login']); }
