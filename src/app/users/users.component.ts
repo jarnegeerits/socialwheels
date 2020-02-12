@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../shared/services/auth.service.service';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Cars, Users } from '../../shared/models/user.models';
 
 @Component({
   selector: 'app-users',
@@ -6,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  public car$: Observable<Cars[]>;
+  public user$: Observable<Users[]>;
 
-  constructor() { }
+  constructor(
+    public authService: AuthService,
+    public router: Router
+  ) { }
 
   ngOnInit() {
+    if (!this.authService.isLoggedIn) { this.router.navigate(['/login']); }
+    this.car$ = this.authService.getCars();
+    this.user$ = this.authService.getUsers();
   }
 
 }
