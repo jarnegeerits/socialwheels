@@ -1,9 +1,27 @@
 <p>Here's your dashboard:</p>
-<li *ngFor="let user of user$ | async">
+<!-- <li *ngFor="let user of user$ | let car of car$ | async">
     <button type="button" class="btn btn-lg btn-primary" (click)="editCost(user.id)">Edit</button>
     
-     <span class="alert alert-info">{{user.userName}}</span> 
+     <span class="alert alert-info">{{user.userName}}</span>
+     <span class="alert alert-info">{{car.id}}</span>  
      <span class="alert alert-dark ml-1">{{user.cost}}</span> 
     
 </li>
-    <button type="button" class="btn btn-lg btn-primary" (click)="addCost(user.id)">New Cost</button>
+    <button type="button" class="btn btn-lg btn-primary" (click)="addCost(user.id)">New Cost</button> -->
+
+    <head>
+        <script src="https://www..gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+    </head>
+
+    <body>
+        <label>Load your car and expenses</label>
+        <button>Show me</button>
+        <p>New costs for the car</p>
+        <input type="textfield" placeholder="Your name" id="naam" />
+        <input type="textfield" placeholder="The new expenses" id="cost" />
+        <button id="addCost">Add this cost</button>
+        <p>Pay them off</p>
+        <script src="../../environments/environment.ts">
+
+        </script>
+    </body>

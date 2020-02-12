@@ -123,3 +123,4 @@
 [0211/152327.517:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0211/152327.517:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0212/163149.643:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0212/183847.685:ERROR:crash_report_database_win.cc(428)] unexpected header
