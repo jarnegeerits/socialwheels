@@ -24,13 +24,13 @@
             "id":1,
             "userName": "Joey",
             "cost": "10000",
-            "auto_id": 1
+            "carId": 1
         },
         {
           "id":2,
           "userName": "Jarne",
           "cost": "10000",
-          "auto_id": 2
+          "carId": 2
       }
     ]
 }

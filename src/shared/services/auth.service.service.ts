@@ -16,7 +16,7 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class AuthService {
-
+  urllocal = "http://localhost:3000/cars";
   user: User;
   constructor(public afAuth: AngularFireAuth, public router: Router, private http: HttpClient) {
     this.afAuth.authState.subscribe(user => {
@@ -92,13 +92,14 @@ export class AuthService {
 
   getCars(): Observable<any> {
       return this.http
-      .get<Cars>('../../assets/data/cars.json')
+      .get<Cars>(this.urllocal)
       .pipe();
       }
 
    getUsers(): Observable<any[]> {
       return this.http
-      .get<Users[]>('../../assets/data/cars.json')
+      // .get<Users[]>('../../assets/data/cars.json')
+      .get<Users[]>(this.urllocal)
       .pipe();
       }
    modifyExpenses(): Observable<any> {

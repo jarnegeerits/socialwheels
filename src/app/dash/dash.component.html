@@ -1,29 +1,8 @@
 <p>Here's your dashboard:</p>
-<<<<<<< Updated upstream
-<!-- <li *ngFor="let car of car$ | async" (click)="">
-    {{car.owner}}
-    <div *ngFor="car.id=(user.id)">
-        {{user.id}}
-    </div>
-</li> -->
-<div class="container-fluid">
-  <ul>
-    <li *ngFor="let car of car$ | async">
-      <p>{{car.car}}</p>
-      <ul>
-        <li *ngFor="let user of user$ | async">
-          <p>{{user.userName}}{{user.cost}}</p>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</div>
-=======
-<div class="container-fluid">
-    <ul>
-        <li *ngFor="let cars of car$| async">
-            {{users.userName}}-{{users.cost}}
-        </li>
-    </ul>
-</div>
->>>>>>> Stashed changes
+<li *ngFor="let user of user$ | async">
+    <button type="button" class="btn btn-outline-danger btn-sm" (click)="editUser(user.id)">Edit</button>
+    
+     <span class="alert alert-info">{{user.userName}}</span> 
+     <span class="alert alert-dark ml-1">{{user.cost}}</span> 
+    
+</li>

@@ -17,7 +17,7 @@ export class DashComponent implements OnInit {
     public authService: AuthService,
     private router: Router
   ) { }
-
+    
   ngOnInit() {
     if (!this.authService.isLoggedIn) { this.router.navigate(['/login']); }
     this.car$ = this.authService.getCars();
