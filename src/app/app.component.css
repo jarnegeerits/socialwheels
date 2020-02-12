@@ -7,6 +7,10 @@
   border-color: #f4511e;
   text-align: center;
 }
+.btn-primary:hover {
+  background-color: darkred;
+  border-color: darkred;
+}
 .navbar {
   background-color: dimgray;
   color: white;

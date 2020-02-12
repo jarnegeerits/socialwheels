@@ -3,7 +3,8 @@ import { AuthService } from '../../shared/services/auth.service.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Cars, Users } from '../../shared/models/user.models';
-
+import { AngularFirestore } from '@angular/fire/firestore';
+// var firestore = firebase.firestore;
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
