@@ -17,3 +17,10 @@ export class Users {
       public carId: number
   ) {}
 }
+
+export class CarOwners {
+  constructor(
+    public ownerId: void,
+    public ownerName: string
+  ) {}
+}

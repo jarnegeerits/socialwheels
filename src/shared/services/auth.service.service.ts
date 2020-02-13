@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { User } from 'firebase';
 import { Cars, Users } from '../models/user.models';
 import { Observable } from 'rxjs';
@@ -19,7 +20,7 @@ export class AuthService {
   urllocal = 'http://localhost:3000/cars';
   urllocal2 = 'http://localhost:3000/users';
   user: User;
-  constructor(public afAuth: AngularFireAuth, public router: Router, private http: HttpClient) {
+  constructor(public afAuth: AngularFireAuth, public router: Router, private http: HttpClient, private firestore: AngularFirestore) {
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.user = user;
@@ -97,17 +98,42 @@ export class AuthService {
       .pipe();
       }
 
-   getUsers(): Observable<any[]> {
-      return this.http
-      // .get<Users[]>('../../assets/data/cars.json')
-      .get<Users[]>(this.urllocal2)
-      .pipe();
-      }
-   editCost(value): Observable<any> {
+  getUsers(): Observable<any[]> {
     return this.http
-    // .get<Cars>('../../assets/data/cars.json')
-    .get<Cars[]>(this.urllocal)
+    // .get<Users[]>('../../assets/data/cars.json')
+    .get<Users[]>(this.urllocal2)
     .pipe();
-    // return this.http.delete(this.urllocal+`/${value}`)
     }
+  editCost(value): Observable<any> {
+  return this.http
+  // .get<Cars>('../../assets/data/cars.json')
+  .get<Cars[]>(this.urllocal)
+  .pipe();
+  // return this.http.delete(this.urllocal+`/${value}`)
+  }
+  // Attempt to CRUD carOwners from firestore
+  createCarOwner(data) {
+    return new Promise<any>((resolve, reject) => {
+      this.firestore
+        .collection('carOwners')
+        .add(data)
+        .then(res => {}, err => reject(err));
+    });
+  }
+  updateCarOwner(data) {
+    return this.firestore
+      .collection('carOwners')
+      .doc(data.payload.doc.id)
+      .set({ completed: true }, { merge: true });
+  }
+  getCarOwners() {
+    return this.firestore.collection('carOwners');
+  }
+  deleteCarOwners(data) {
+    return this.firestore
+      .collection('carOwners')
+      .doc(data.payload.doc.id)
+      .delete();
+  }
 }
+
