@@ -19,8 +19,7 @@ export class DashComponent implements OnInit {
     private router: Router
   ) { }
 
-    editCost(value)
-    {
+    editCost(value) {
       this.authService.editCost(value).subscribe();
     // ik gebruik de subscribe om de observable uit te voeren
     this.router.navigate(['/dash']);
@@ -31,7 +30,7 @@ export class DashComponent implements OnInit {
     //   //Net zoals pokemon iets wegschrijven in de json-server
     //   this.router.navigate(['/dash']);
     // }
-    
+
   ngOnInit() {
     if (!this.authService.isLoggedIn) { this.router.navigate(['/login']); }
     this.car$ = this.authService.getCars();

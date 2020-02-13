@@ -36,6 +36,11 @@
   border-radius: 15px;
   color: black;
   }
+.btn-primary:hover {
+  background-color: darkred;
+  border-color: darkred;
+  color: white;
+}
 .logoSocial {
   font-size: 40px;
   color: white;
