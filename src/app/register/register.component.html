@@ -17,8 +17,12 @@
                   <input type="password" id="inputPassword" class="form-control" placeholder="Password"
                   #userPassword required>
                 </div>
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword2" class="form-control" placeholder="Repeat Password"
+                  #userPassword2 required>
+                </div>
                 <button type="submit" class="btn btn-block btn-lg btn-primary"
-                (click)="authService.register(userEmail.value, userPassword.value)"
+                (click)="authService.register(userEmail.value, userPassword.value, userPassword2.value)"
                 >Sign up!</button>
               </div>
             </div>

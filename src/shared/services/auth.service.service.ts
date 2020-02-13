@@ -8,7 +8,6 @@ import { Cars, Users } from '../models/user.models';
 import { Observable } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 
-// import * as firebase from 'firebase/app';
 import swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 
@@ -30,8 +29,10 @@ export class AuthService {
       }
     });
   }
-  register(email: string, password: string) {
-    this.afAuth
+
+  register(email: string, password: string, password2: string) {
+    if (password === password2) {
+      this.afAuth
       .auth
       .createUserWithEmailAndPassword(email, password)
       .catch(err => {
@@ -42,13 +43,21 @@ export class AuthService {
           confirmButtonText: 'Cool'
         });
     });
-    swal.fire({
+      swal.fire({
       position: 'top-end',
       icon: 'success',
       title: 'You are now registered and logged in!',
       showConfirmButton: false,
       timer: 2000
     });
+    } else {
+      swal.fire({
+        title: 'Error!',
+        text: 'Passwords did not match!',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      });
+    }
   }
 
   login(email: string, password: string) {
@@ -99,7 +108,7 @@ export class AuthService {
       return this.http
       .get<Cars>(this.urllocal)
       .pipe();
-      }
+    }
 
   getUsers(): Observable<any[]> {
     return this.http
@@ -113,30 +122,6 @@ export class AuthService {
   .get<Cars[]>(this.urllocal)
   .pipe();
   // return this.http.delete(this.urllocal+`/${value}`)
-  }
-  // Attempt to CRUD carOwners from firestore
-  createCarOwner(data) {
-    return new Promise<any>((resolve, reject) => {
-      this.firestore
-        .collection('carOwners')
-        .add(data)
-        .then(res => {}, err => reject(err));
-    });
-  }
-  updateCarOwner(data) {
-    return this.firestore
-      .collection('carOwners')
-      .doc(data.payload.doc.id)
-      .set({ completed: true }, { merge: true });
-  }
-  getCarOwners() {
-    return this.firestore.collection('carOwners');
-  }
-  deleteCarOwners(data) {
-    return this.firestore
-      .collection('carOwners')
-      .doc(data.payload.doc.id)
-      .delete();
   }
 }
 

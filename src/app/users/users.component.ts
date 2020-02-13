@@ -19,17 +19,11 @@ export class UsersComponent implements OnInit {
     public router: Router
   ) { }
 
-  // getCarOwners = () =>
-  // this.authService
-  //   .getCarOwners()
-  //   .subscribe(res => (this.carOwner$ = res));
-
   ngOnInit() {
     if (!this.authService.isLoggedIn) { this.router.navigate(['/login']); }
     console.log(this.authService.userUID);
     this.car$ = this.authService.getCars();
     this.user$ = this.authService.getUsers();
-    // this.getCarOwners();
   }
 
 }

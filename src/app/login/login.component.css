@@ -32,7 +32,12 @@
   margin-top: 10%;
   background-color: #f4511e;
   border-color: #f4511e;
-  }
+}
+.btn-primary:hover {
+  background-color: darkred;
+  border-color: darkred;
+  color: white;
+}
 .logoSocial {
   font-size: 40px;
   color: white;

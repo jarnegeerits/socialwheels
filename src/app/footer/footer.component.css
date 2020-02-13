@@ -2,6 +2,9 @@
   font-size: 40px;
   color: white;
 }
+.logoSocial:hover {
+  color: darkred;
+}
 /* .logo:hover {
   color: lightgray;
 } */
