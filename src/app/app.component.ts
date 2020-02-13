@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
   constructor(public authService: AuthService) {}
   ngOnInit() {
     this.authService.getCars().subscribe(cars => this.cars = cars);
-
 }
 
 

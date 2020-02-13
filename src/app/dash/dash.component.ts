@@ -35,6 +35,8 @@ export class DashComponent implements OnInit {
     if (!this.authService.isLoggedIn) { this.router.navigate(['/login']); }
     this.car$ = this.authService.getCars();
     this.user$ = this.authService.getUsers();
+    console.log('user is logged in: ' + this.authService.isLoggedIn);
+    console.log('with UID:  ' + this.authService.userUID);
   }
 
 }

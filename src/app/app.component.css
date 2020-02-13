@@ -6,6 +6,12 @@
   background-color: #f4511e;
   border-color: #f4511e;
   text-align: center;
+  width: 50%;
+  height: auto;
+  margin-right: 0% !important;
+  margin-left: 2%;
+  padding: 10%;
+  min-width: 60px;
 }
 .btn-primary:hover {
   background-color: darkred;
@@ -15,4 +21,3 @@
   background-color: dimgray;
   color: white;
 }
-

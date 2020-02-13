@@ -1,15 +1,19 @@
-<nav class="navbar navbar-light bg-light static-top">
-  <div class="container">
-    <a routerLink="home" class="navbar-brand nav-item nav-link"><h2>{{title}}</h2></a>
-    <div *ngIf="!authService.isLoggedIn" class="nav-item">
-      <a routerLink="login" class="btn-primary btn nav-item nav-link align-right">Login</a>
+
+<div class="container-fluid">
+  <nav class="navbar navbar-light bg-light static-top justify-content-between">
+    <div class="col-auto">
+      <a routerLink="home" class="navbar-brand nav-item nav-link"><h2>{{title}}</h2></a>
     </div>
-    <div *ngIf="authService.isLoggedIn" class="nav-item">
-      <button class="btn-primary btn nav-item nav-link align-right"
+    <div class="col-3 d-flex">
+      <a routerLink="users" class="btn nav-item nav-link align-left mr-auto p-2 btn-primary">Profile</a>
+      <!-- LOGIN/LOGOUT BUTTON -->
+      <a *ngIf="!authService.isLoggedIn" routerLink="login" class="btn nav-item nav-link align-right mr-auto p-2 btn-primary">Login</a>
+      <button *ngIf="authService.isLoggedIn" class="btn nav-item nav-link align-right mr-auto p-2 btn-primary"
       (click)="authService.logout()">Logout</button>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>
+
 
 <router-outlet></router-outlet>
 

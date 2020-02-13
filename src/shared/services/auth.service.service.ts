@@ -18,16 +18,26 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   urllocal = 'http://localhost:3000/cars';
   urllocal2 = 'http://localhost:3000/users';
-  user: User;
+  user: Observable<firebase.User>;
+  private userDetails: firebase.User = null;
   constructor(public afAuth: AngularFireAuth, public router: Router, private http: HttpClient, private firestore: AngularFirestore) {
-    this.afAuth.authState.subscribe(user => {
+    this.user = afAuth.authState;
+    this.user.subscribe((user) => {
       if (user) {
-        this.user = user;
-        localStorage.setItem('user', JSON.stringify(this.user));
+        this.userDetails = user;
       } else {
-        localStorage.setItem('user', null);
+        this.userDetails = null;
       }
     });
+    // Oude login functie
+    // this.afAuth.authState.subscribe(user => {
+    //   if (user) {
+    //     this.user = user;
+    //     localStorage.setItem('user', JSON.stringify(this.user));
+    //   } else {
+    //     localStorage.setItem('user', null);
+    //   }
+    // });
   }
 
   register(email: string, password: string, password2: string) {
@@ -97,11 +107,20 @@ export class AuthService {
     });
   }
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return user !== null;
+    if (this.userDetails == null) {
+      return false;
+    } else {
+      return true;
+    }
   }
+  // Oude login check
+  // get isLoggedIn(): boolean {
+  //   const user = JSON.parse(localStorage.getItem('user'));
+  //   return user !== null;
+  // }
+
   get userUID(): string {
-    return this.isLoggedIn ? this.user.uid : null;
+    return this.isLoggedIn ? this.userDetails.uid : null;
   }
 
   getCars(): Observable<any> {

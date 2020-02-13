@@ -27,6 +27,8 @@ export class HomeComponent implements OnInit {
     // if (!this.authService.isLoggedIn) {
     //   this.router.navigate(['/login']);
     // }
+    console.log('user is logged in: ' + this.authService.isLoggedIn);
+    console.log('with UID:  ' + this.authService.userUID);
   }
 
 }
