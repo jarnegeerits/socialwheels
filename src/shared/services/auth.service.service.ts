@@ -91,6 +91,9 @@ export class AuthService {
     const user = JSON.parse(localStorage.getItem('user'));
     return user !== null;
   }
+  get userUID(): string {
+    return this.isLoggedIn ? this.user.uid : null;
+  }
 
   getCars(): Observable<any> {
       return this.http
