@@ -86,7 +86,6 @@ export class AuthService {
   }
   async logout() {
     await this.afAuth.auth.signOut();
-    localStorage.removeItem('user');
     this.router.navigate(['/home']);
     swal.fire({
       title: 'Goodbye!',

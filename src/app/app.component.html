@@ -7,7 +7,8 @@
       <a *ngIf="authService.isLoggedIn" routerLink="users" class="btn nav-item nav-link align-left mr-auto p-2 btn-primary">Profile</a>
       <!-- LOGIN/LOGOUT BUTTON -->
       <a *ngIf="!authService.isLoggedIn" routerLink="login" class="btn nav-item nav-link align-right mr-auto p-2 btn-primary">Login</a>
-      <button *ngIf="authService.isLoggedIn" class="btn nav-item nav-link align-right mr-auto p-2 btn-primary"
+      <button *ngIf="authService.isLoggedIn"
+      class="btn nav-item nav-link align-right mr-auto p-2 btn-primary"
       (click)="authService.logout()">Logout</button>
     </div>
   </nav>
