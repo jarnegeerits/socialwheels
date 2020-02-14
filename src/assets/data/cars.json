@@ -1,36 +1,41 @@
 {
-    "cars":[
-        {
-            "id":1,
-            "owner": "Joey",
-            "car": "Buggati Veyron",
-            "fuelType": "Benzine",
-            "fuelAmount": "50",
-            "currentPossess": "Jarne"
-        },
-        {
-          "id":2,
-          "owner": "Jarne",
-          "car": "Lamborghini Countach",
-          "fuelType": "Benzine",
-          "fuelAmount": "35",
-          "currentPossess": "Jarne"
-      }
+  "cars":[
+    {
+        "id":1,
+        "ownerUID": "",
+        "car": "Buggati Veyron",
+        "fuelType": "Benzine",
+        "fuelAmount": 50,
+        "currentPossessUID": "NtArNVTwToYgf2xiy4YKK8MnaOT2"
+    },
+    {
+      "id":2,
+      "ownerUID": "",
+      "car": "Lamborghini Countach",
+      "fuelType": "Benzine",
+      "fuelAmount": 35,
+      "currentPossessUID": "NtArNVTwToYgf2xiy4YKK8MnaOT2"
+    }
+  ],
 
-    ],
-
-    "users":[
-        {
-            "id":1,
-            "userName": "Joey",
-            "cost": "10000",
-            "carId": 1
-        },
-        {
-          "id":2,
-          "userName": "Jarne",
-          "cost": "10000",
-          "carId": 2
-      }
-    ]
+  "users":[
+    {
+        "UID":"8qSYeCtLUtMfvhvXQVwqhMIVQj52",
+        "userName": "Joey",
+        "cost": 10000,
+        "carId": 1
+    },
+    {
+      "UID":"NtArNVTwToYgf2xiy4YKK8MnaOT2",
+      "userName": "Jarne",
+      "cost": 10000,
+      "carId": 2
+    },
+    {
+      "UID": "",
+      "userName": "Lennert",
+      "cost": 500,
+      "carId": 2
+    }
+  ]
 }

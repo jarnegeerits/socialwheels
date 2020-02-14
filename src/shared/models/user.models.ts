@@ -1,26 +1,19 @@
 export class Cars {
   constructor(
     public id: void,
-    public owner: string,
+    public ownerUID: string,
     public car: string,
-    public fuel: number,
+    public fuelType: string,
     public fuelAmount: number,
-    public currentPossess: string
+    public currentPossessUID: string
   ) {}
 }
 
 export class Users {
   constructor(
-      public id: void,
+      public UID: string,
       public userName: string,
       public cost: number,
       public carId: number
-  ) {}
-}
-
-export class CarOwners {
-  constructor(
-    public ownerId: void,
-    public ownerName: string
   ) {}
 }

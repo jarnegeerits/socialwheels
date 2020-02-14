@@ -1,12 +1,42 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class='col-md-12 justify-content-left'>
-      <h1>Hi there!</h1>
-    </div>
-    <div class="row">
-      <div class='col-md-12 justify-content-center'>
-
+<div *ngFor="let user of user$ | async">
+  <div *ngIf="user.UID==currentUID$">
+    <div *ngFor="let car of car$ | async">
+      <div *ngIf="car.id == user.carId">
+        <!-- IGNORE BOVENSTAANDE ERROR, DIT IS EEN FOUT IN VSCODE -->
+        <div class="container-fluid">
+          <div class="row justify-content-between">
+            <div class="col-auto">
+              <div class="row justify-content-left userRow">
+                <div class="col-md-12">
+                  <h1 class="displayName">{{ user.userName }}</h1>
+                  <div class="row">
+                    <ul class="userDataList">
+                      <li><h3>Amount owed: {{ user.cost }}</h3></li>
+                      <!-- EVENTUEEL EXTRA USER INFO IN DEZE LIST -->
+                      <!-- DAN MOET DIT WEL TOEGEVOEGD WORDEN AAN DE MODEL EN JSON -->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="row justify-content-right carRow">
+                <div class="col-md-12">
+                  <h1 class="carName">{{ car.car }}</h1>
+                  <div class="row">
+                    <ul class="carDataList">
+                      <li><h3>Fuel Type: {{ car.fuelType }}</h3></li>
+                      <li><h3>Fuel Amount: {{ car.fuelAmount }}L</h3></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+

@@ -29,17 +29,7 @@ export class AuthService {
         this.userDetails = null;
       }
     });
-    // Oude login functie
-    // this.afAuth.authState.subscribe(user => {
-    //   if (user) {
-    //     this.user = user;
-    //     localStorage.setItem('user', JSON.stringify(this.user));
-    //   } else {
-    //     localStorage.setItem('user', null);
-    //   }
-    // });
   }
-
   register(email: string, password: string, password2: string) {
     if (password === password2) {
       this.afAuth
@@ -52,14 +42,15 @@ export class AuthService {
           icon: 'error',
           confirmButtonText: 'Cool'
         });
-    });
+      });
       swal.fire({
       position: 'top-end',
       icon: 'success',
       title: 'You are now registered and logged in!',
       showConfirmButton: false,
-      timer: 2000
-    });
+      timer: 5000
+      });
+      this.router.navigate(['home']);
     } else {
       swal.fire({
         title: 'Error!',
@@ -69,7 +60,6 @@ export class AuthService {
       });
     }
   }
-
   login(email: string, password: string) {
     this.afAuth
       .auth
@@ -94,7 +84,6 @@ export class AuthService {
         console.log('Something went wrong:', err.message);
       });
   }
-
   async logout() {
     await this.afAuth.auth.signOut();
     localStorage.removeItem('user');
@@ -113,34 +102,46 @@ export class AuthService {
       return true;
     }
   }
-  // Oude login check
-  // get isLoggedIn(): boolean {
-  //   const user = JSON.parse(localStorage.getItem('user'));
-  //   return user !== null;
-  // }
-
   get userUID(): string {
     return this.isLoggedIn ? this.userDetails.uid : null;
   }
-
   getCars(): Observable<any> {
-      return this.http
-      .get<Cars>(this.urllocal)
-      .pipe();
-    }
-
+    return this.http
+    .get<Cars>(this.urllocal)
+    .pipe();
+  }
   getUsers(): Observable<any[]> {
     return this.http
     // .get<Users[]>('../../assets/data/cars.json')
     .get<Users[]>(this.urllocal2)
     .pipe();
-    }
+  }
+  // getUser(): Observable<any[]> {
+  //   return this.http
+  //   .get<Users>
+  // }
   editCost(value): Observable<any> {
-  return this.http
-  // .get<Cars>('../../assets/data/cars.json')
-  .get<Cars[]>(this.urllocal)
-  .pipe();
-  // return this.http.delete(this.urllocal+`/${value}`)
+    return this.http
+    // .get<Cars>('../../assets/data/cars.json')
+    .get<Cars[]>(this.urllocal)
+    .pipe();
+    // return this.http.delete(this.urllocal+`/${value}`)
   }
 }
 
+  // Oude login functie
+  // this.afAuth.authState.subscribe(user => {
+  //   if (user) {
+  //     this.user = user;
+  //     localStorage.setItem('user', JSON.stringify(this.user));
+  //   } else {
+  //     localStorage.setItem('user', null);
+  //   }
+  // });
+
+
+  // Oude login check
+  // get isLoggedIn(): boolean {
+  //   const user = JSON.parse(localStorage.getItem('user'));
+  //   return user !== null;
+  // }
