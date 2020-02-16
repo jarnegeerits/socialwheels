@@ -22,7 +22,7 @@ export class DashComponent implements OnInit {
     editCost(value) {
       this.authService.editCost(value).subscribe();
     // ik gebruik de subscribe om de observable uit te voeren
-    this.router.navigate(['/dash']);
+      this.router.navigate(['/dash']);
     }
     // addCost(value)
     // {
@@ -32,11 +32,14 @@ export class DashComponent implements OnInit {
     // }
 
   ngOnInit() {
-    if (!this.authService.isLoggedIn) { this.router.navigate(['/login']); }
-    this.car$ = this.authService.getCars();
-    this.user$ = this.authService.getUsers();
-    console.log('user is logged in: ' + this.authService.isLoggedIn);
-    console.log('with UID:  ' + this.authService.userUID);
+    (async () => {
+      this.car$ = this.authService.getCars();
+      this.user$ = this.authService.getUsers();
+      await this.authService.redirectDelay(1000);
+      console.log('user is logged in: ' + this.authService.isLoggedIn);
+      console.log('with UID:  ' + this.authService.userUID);
+      if (!this.authService.isLoggedIn) { this.router.navigate(['/login']); }
+    })();
   }
 
 }

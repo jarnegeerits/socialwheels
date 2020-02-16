@@ -101,6 +101,9 @@ export class AuthService {
       return true;
     }
   }
+  redirectDelay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
   get userUID(): string {
     return this.isLoggedIn ? this.userDetails.uid : null;
   }
