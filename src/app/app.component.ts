@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/services/auth.service.service';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
-import { Cars } from '../shared/models/user.models'
+import { Cars } from '../shared/models/user.models';
+import {PopupModule} from 'ng2-opd-popup';
 // import { Cars } from '../assets/data/cars.json'
 
 

@@ -5,7 +5,7 @@
         "ownerUID": "",
         "car": "Buggati Veyron",
         "fuelType": "Benzine",
-        "fuelAmount": 50,
+        "fuelAmount": 40,
         "currentPossessUID": "NtArNVTwToYgf2xiy4YKK8MnaOT2"
     },
     {
@@ -22,7 +22,7 @@
     {
         "UID":"8qSYeCtLUtMfvhvXQVwqhMIVQj52",
         "userName": "Joey",
-        "cost": 10000,
+        "cost": 30000,
         "carId": 1
     },
     {
