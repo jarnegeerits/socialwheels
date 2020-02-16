@@ -1,13 +1,12 @@
-<p>Here's your dashboard:</p>
-<!-- <li *ngFor="let user of user$ | let car of car$ | async">
-    <button type="button" class="btn btn-lg btn-primary" (click)="editCost(user.id)">Edit</button>
+<!-- <p>Here's your dashboard:</p>
+<ng-container *ngFor="let user of user$ | async">
 
-     <span class="alert alert-info">{{user.userName}}</span>
-     <span class="alert alert-info">{{car.id}}</span>
+     <span class="alert alert-info">{{user.userName}}</span> <br>
+     <span class="alert alert-info">{{user.cost}}</span> <br>
      <span class="alert alert-dark ml-1">{{user.cost}}</span>
 
-</li>
-    <button type="button" class="btn btn-lg btn-primary" (click)="addCost(user.id)">New Cost</button> -->
+</ng-container>
+    <button type="button" class="btn btn-lg btn-primary" (click)="addCost(user.id)">New Cost</button>
 
     <body>
         <label>Load your car and expenses</label>
@@ -18,3 +17,49 @@
         <button id="addCost">Add this cost</button>
         <p>Pay them off</p>
     </body>
+ Nodig: 
+    - knop om expenses te laten zien aan auto
+    - aan de hand van een switch
+    - Voor elke user die aan die auto nog moet betalen
+-->
+
+<div *ngFor="let user of user$ | async">
+    <div *ngIf="user.UID==currentUID$">
+      <div *ngFor="let car of car$ | async">
+        <div *ngIf="car.id == user.carId">
+          <!-- IGNORE BOVENSTAANDE ERROR, DIT IS EEN FOUT IN VSCODE -->
+          <div class="container-fluid">
+            <div class="row justify-content-between">
+              <div class="col-auto">
+                <div class="row justify-content-left userRow">
+                  <div class="col-md-12">
+                    <h1 class="displayName">{{ user.userName }}</h1>
+                    <div class="row">
+                      <ul class="userDataList">
+                        <li><h3>Amount owed: {{ user.cost }}</h3></li>
+                        <!-- EVENTUEEL EXTRA USER INFO IN DEZE LIST -->
+                        <!-- DAN MOET DIT WEL TOEGEVOEGD WORDEN AAN DE MODEL EN JSON -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="row justify-content-right carRow">
+                  <div class="col-md-12">
+                    <h1 class="carName">{{ car.car }}</h1>
+                    <div class="row">
+                      <ul class="carDataList">
+                        <li><h3>Fuel Type: {{ car.fuelType }}</h3></li>
+                        <li><h3>Fuel Amount: {{ car.fuelAmount }}L</h3></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
