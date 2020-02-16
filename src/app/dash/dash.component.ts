@@ -13,24 +13,14 @@ export class DashComponent implements OnInit {
   public car$: Observable<Cars[]>;
   public user$: Observable<Users[]>;
   public newUser$: Observable<Users>;
+  public currentUID$ = '';
 
   constructor(
     public authService: AuthService,
     private router: Router
   ) { }
 
-    editCost(value) {
-      this.authService.editCost(value).subscribe();
-    // ik gebruik de subscribe om de observable uit te voeren
-      this.router.navigate(['/dash']);
-    }
-    // addCost(value)
-    // {
-    //   this.authService.AddCost(value).subscribe();
-    //   //Net zoals pokemon iets wegschrijven in de json-server
-    //   this.router.navigate(['/dash']);
-    // }
-
+ 
   ngOnInit() {
     (async () => {
       this.car$ = this.authService.getCars();

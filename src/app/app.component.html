@@ -4,6 +4,7 @@
       <a routerLink="home" class="navbar-brand nav-item nav-link"><h2>{{title}}</h2></a>
     </div>
     <div class="col-3 d-flex">
+      <a *ngIf="authService.isLoggedIn" routerLink="dash" class="btn nav-item nav-link align-left mr-auto p-2 btn-primary">Dashboard</a>
       <a *ngIf="authService.isLoggedIn" routerLink="users" class="btn nav-item nav-link align-left mr-auto p-2 btn-primary">Profile</a>
       <!-- LOGIN/LOGOUT BUTTON -->
       <a *ngIf="!authService.isLoggedIn" routerLink="login" class="btn nav-item nav-link align-right mr-auto p-2 btn-primary">Login</a>
