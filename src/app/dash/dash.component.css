@@ -8,7 +8,7 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
   .cardrow {
     padding-top: 5%;
     padding-bottom: 5%;
@@ -109,5 +109,12 @@
   .socialIcons {
     padding-right: 3%;
   }
-  
-  
+  .carName {
+    color: white;
+    margin-top: 10px;
+  }
+  .displayName {
+    color:white;
+    margin-top: 10px;
+  }
+

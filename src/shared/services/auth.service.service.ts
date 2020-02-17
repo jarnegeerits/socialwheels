@@ -6,10 +6,10 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { User } from 'firebase';
 import { Cars, Users } from '../models/user.models';
 import { Observable } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
+import { tap, map, catchError } from 'rxjs/operators';
 
 import swal from 'sweetalert2';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -118,17 +118,20 @@ export class AuthService {
     .get<Users[]>(this.urllocal2)
     .pipe();
   }
-  // getUser(): Observable<any[]> {
-  //   return this.http
-  //   .get<Users>
-  // }
-  editCost(value): Observable<any> {
+  addUser(user: Users): Observable<Users[]> {
     return this.http
-    // .get<Cars>('../../assets/data/cars.json')
-    .get<Cars[]>(this.urllocal)
-    .pipe();
-    // return this.http.delete(this.urllocal+`/${value}`)
+    .post<Users>(this.urllocal2, user, httpOptions)
+    .pipe(
+      catchError(this.handleError('addUser', user))
+    );
   }
+  // editCost(value): Observable<any> {
+  //   return this.http
+  //   // .get<Cars>('../../assets/data/cars.json')
+  //   .get<Cars[]>(this.urllocal)
+  //   .pipe();
+  //   // return this.http.delete(this.urllocal+`/${value}`)
+  // }
 }
 
   // Oude login functie

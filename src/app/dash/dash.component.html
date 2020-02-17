@@ -17,7 +17,7 @@
         <button id="addCost">Add this cost</button>
         <p>Pay them off</p>
     </body>
- Nodig: 
+ Nodig:
     - Voor elke user die aan die auto nog moet betalen
 -->
 
@@ -29,9 +29,22 @@
           <div class="container-fluid">
             <div class="row justify-content-between">
               <div class="col-auto">
+                <div class="row justify-content-right carRow">
+                  <div class="col-md-12">
+                    <h1 class="carName rounded">{{ car.car }}</h1>
+                    <div class="row">
+                      <ul class="carDataList">
+                        <li><h3>Fuel Type: {{ car.fuelType }}</h3></li>
+                        <li><h3>Fuel Amount: {{ car.fuelAmount }}L</h3></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
                 <div class="row justify-content-left userRow">
                   <div class="col-md-12">
-                    <h1 class="displayName">{{ user.userName }}</h1>
+                    <h1 class="displayName rounded">{{ user.userName }}</h1>
                     <div class="row">
                       <ul class="userDataList">
                         <li><h3>Amount owed: {{ user.cost }}</h3></li>
@@ -41,16 +54,21 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-auto">
-                <div class="row justify-content-right carRow">
-                  <div class="col-md-12">
-                    <h1 class="carName">{{ car.car }}</h1>
-                    <div class="row">
-                      <ul class="carDataList">
-                        <li><h3>Fuel Type: {{ car.fuelType }}</h3></li>
-                        <li><h3>Fuel Amount: {{ car.fuelAmount }}L</h3></li>
-                      </ul>
+                <div *ngFor="let user of user$ | async">
+                  <div *ngIf="user.UID != currentUID$">
+                    <div *ngIf="car.id == user.carId">
+                      <div class="row justify-content-left userRow">
+                        <div class="col-md-12">
+                          <h1 class="displayName rounded">{{ user.userName }}</h1>
+                          <div class="row">
+                            <ul class="userDataList">
+                              <li><h3>Amount owed: {{ user.cost }}</h3></li>
+                              <!-- EVENTUEEL EXTRA USER INFO IN DEZE LIST -->
+                              <!-- DAN MOET DIT WEL TOEGEVOEGD WORDEN AAN DE MODEL EN JSON -->
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
