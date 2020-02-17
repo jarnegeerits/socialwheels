@@ -7,9 +7,9 @@ import { User } from 'firebase';
 import { Cars, Users } from '../models/user.models';
 import { Observable } from 'rxjs';
 import { tap, map, catchError } from 'rxjs/operators';
-
-import swal from 'sweetalert2';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import swal from 'sweetalert2';
+import { async } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +30,7 @@ export class AuthService {
       }
     });
   }
-  register(email: string, password: string, password2: string) {
+  async register(email: string, regName: string, password: string, password2: string) {
     if (password === password2) {
       this.afAuth
       .auth
@@ -46,10 +46,11 @@ export class AuthService {
       swal.fire({
       position: 'top-end',
       icon: 'success',
-      title: 'You are now registered and logged in!',
+      title: 'You are about to be logged in! Please wait while we complete the registration.',
       showConfirmButton: false,
-      timer: 5000
+      timer: 10000
       });
+      await this.newUser(regName);
       this.router.navigate(['home']);
     } else {
       swal.fire({
@@ -59,6 +60,23 @@ export class AuthService {
         confirmButtonText: 'Cool'
       });
     }
+  }
+  async newUser(newName: string) {
+    // Firebase tijd geven voor UID te leveren
+    await this.redirectDelay(2500);
+    const regUID = this.userUID;
+    await this.redirectDelay(2500);
+
+    // headers declareren en body opvullen om met de POST mee te sturen
+    const headers = new HttpHeaders().set('content', 'application/json');
+    const body = { UID : regUID, userName : newName, cost : 0, carId: 0};
+
+    // Post request om nieuwe user weg te schrijven
+    return this.http.post(this.urllocal2, body, { headers }).subscribe(
+      data => {
+        console.log('Post success ', data);
+      }
+    );
   }
   login(email: string, password: string) {
     this.afAuth
@@ -109,28 +127,16 @@ export class AuthService {
   }
   getCars(): Observable<any> {
     return this.http
-    .get<Cars>(this.urllocal)
-    .pipe();
+      .get<Cars[]>(this.urllocal)
+      .pipe();
   }
   getUsers(): Observable<any[]> {
     return this.http
-    // .get<Users[]>('../../assets/data/cars.json')
-    .get<Users[]>(this.urllocal2)
-    .pipe();
+      .get<Users[]>(this.urllocal2)
+      .pipe();
   }
-  addUser(user: Users): Observable<Users[]> {
-    return this.http
-    .post<Users>(this.urllocal2, user, httpOptions)
-    .pipe(
-      catchError(this.handleError('addUser', user))
-    );
-  }
-  // editCost(value): Observable<any> {
-  //   return this.http
-  //   // .get<Cars>('../../assets/data/cars.json')
-  //   .get<Cars[]>(this.urllocal)
-  //   .pipe();
-  //   // return this.http.delete(this.urllocal+`/${value}`)
+  // addUser(value): Observable<any> {
+
   // }
 }
 
@@ -149,4 +155,20 @@ export class AuthService {
   // get isLoggedIn(): boolean {
   //   const user = JSON.parse(localStorage.getItem('user'));
   //   return user !== null;
+  // }
+
+
+  // addUser(user: Users): Observable<Users[]> {
+  //   return this.http
+  //   .post<Users>(this.urllocal2, user)
+  //   .pipe(
+  //     catchError(this.handleError('addUser', user))
+  //   );
+  // }
+  // editCost(value): Observable<any> {
+  //   return this.http
+  //   // .get<Cars>('../../assets/data/cars.json')
+  //   .get<Cars[]>(this.urllocal)
+  //   .pipe();
+  //   // return this.http.delete(this.urllocal+`/${value}`)
   // }

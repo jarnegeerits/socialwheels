@@ -11,6 +11,7 @@ export class Cars {
 
 export class Users {
   constructor(
+      public id: void,
       public UID: string,
       public userName: string,
       public cost: number,
