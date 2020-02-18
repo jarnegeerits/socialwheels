@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FooterComponent } from '../footer/footer.component';
 // Font awesome imports
-import { faSignal, faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
+import { faSignal, faGlobeEurope, faHandshake } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookSquare, faTwitterSquare, faInstagram } from '@fortawesome/fontawesome-free-brands';
 import { AuthService } from '../../shared/services/auth.service.service';
 
@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   // font awesome icons doorgeven naar html, zet non-fa dingen onder volgende comment
   faSignal = faSignal;
   faGlobeEurope = faGlobeEurope;
+  faHandshake = faHandshake;
   faFacebookSquare = faFacebookSquare;
   faTwitterSquare = faTwitterSquare;
   faInstagram = faInstagram;
