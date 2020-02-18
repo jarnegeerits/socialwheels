@@ -135,9 +135,13 @@ export class AuthService {
       .get<Users[]>(this.urllocal2)
       .pipe();
   }
-  editCost(value): Observable<any>{
-    const headers = new HttpHeaders().set("Content-type", "application/json");
-    return this.http.put(this.urllocal2, value, { headers: headers });
+  editCost(value) {
+    const headers = new HttpHeaders().set("content", "application/json");
+    return this.http.put(this.urllocal2 + '/' + value.id, value, { headers }).subscribe(
+      data => {
+        console.log('Put success ', data);
+      }
+    );
   }
   // addUser(value): Observable<any> {
 

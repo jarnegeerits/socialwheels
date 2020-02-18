@@ -37,7 +37,7 @@
       "id": 2,
       "UID": "NtArNVTwToYgf2xiy4YKK8MnaOT2",
       "userName": "Jarne",
-      "cost": 10000,
+      "cost": 9990,
       "carId": 2
     },
     {
@@ -60,6 +60,13 @@
       "userName": "Joey",
       "cost": 30000,
       "carId": 2
+    },
+    {
+      "UID": "ZZ8NivHE7SSq4Y6vxktv8LEuIvm2",
+      "userName": "puttest",
+      "cost": 0,
+      "carId": 0,
+      "id": 6
     }
   ]
 }

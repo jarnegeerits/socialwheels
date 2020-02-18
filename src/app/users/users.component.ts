@@ -26,9 +26,9 @@ export class UsersComponent implements OnInit {
     value2.cost -= value4;
     this.editUser$ = value2;
     console.log(this.editUser$);
-    this.authService.editCost(this.editUser$).subscribe();
+    this.authService.editCost(this.editUser$);
     }
-  }  
+  }
 
 
 
