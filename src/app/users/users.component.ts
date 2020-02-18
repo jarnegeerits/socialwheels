@@ -18,6 +18,17 @@ export class UsersComponent implements OnInit {
     public router: Router
   ) { }
 
+  public pay(value1,value2,value3,value4){
+    console.log(value1,'1',value2,'2',value3,'3',value4);
+
+
+
+
+    
+  }  
+
+
+
   ngOnInit() {
     (async () => {
       await this.authService.redirectDelay(1000);
