@@ -12,7 +12,7 @@
                   <div class="row">
                     <ul class="userDataList">
                       <li><h3>Amount owed: {{ user.cost }}</h3></li>
-                      <input type="number" id="payUp" placeholder="Pay a number"><button (click)="pay(user.userName,user,car,payUp.value)">Pay</button>
+                      <input type="number" id="#payUp" #payUp placeholder="Pay a number"><button (click)="pay(user.userName,user,car,payUp.value)">Pay</button>
                       <!-- EVENTUEEL EXTRA USER INFO IN DEZE LIST -->
                       <!-- DAN MOET DIT WEL TOEGEVOEGD WORDEN AAN DE MODEL EN JSON -->
                     </ul>

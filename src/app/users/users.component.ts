@@ -12,6 +12,7 @@ import { Cars, Users } from '../../shared/models/user.models';
 export class UsersComponent implements OnInit {
   public car$: Observable<Cars[]>;
   public user$: Observable<Users[]>;
+  public editUser$: Observable<Users>;
   public currentUID$ = '';
   constructor(
     public authService: AuthService,
@@ -20,11 +21,13 @@ export class UsersComponent implements OnInit {
 
   public pay(value1,value2,value3,value4){
     console.log(value1,'1',value2,'2',value3,'3',value4);
-
-
-
-
-    
+    console.log(value2.cost);
+    if(value4>0){
+    value2.cost -= value4;
+    this.editUser$ = value2;
+    console.log(this.editUser$);
+    this.authService.editCost(this.editUser$).subscribe();
+    }
   }  
 
 
