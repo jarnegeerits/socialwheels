@@ -11,3 +11,22 @@
   margin-right: 3rem;
   margin-left: 3rem;
 }
+.btn-primary {
+  background-color: #f4511e;
+  border-color: #f4511e;
+  color: white;
+  text-align: center;
+  width: 30%;
+  height: auto;
+  margin-right: 0% !important;
+  margin-left: 3px;
+  padding: 5%;
+  min-width: 40px;
+}
+.btn-primary:hover {
+  background-color: darkred;
+  border-color: darkred;
+}
+.btnFuel {
+  min-width: 60px !important;
+}

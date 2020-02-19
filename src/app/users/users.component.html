@@ -12,7 +12,15 @@
                   <div class="row">
                     <ul class="userDataList">
                       <li><h3>Amount owed: {{ user.cost }}</h3></li>
-                      <input type="number" id="#payUp" #payUp placeholder="Pay a number"><button (click)="pay(user.userName,user,car,payUp.value)">Pay</button>
+                      <div class="input-group mb-3">
+                        <input type="number" class="form-control" placeholder="Amount paid" #payUp aria-label="paid" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-primary btn-outline-secondary" type="button" id="button-addon2"
+                            (click)="pay(user,payUp.value)">
+                            Pay
+                          </button>
+                        </div>
+                      </div>
                       <!-- EVENTUEEL EXTRA USER INFO IN DEZE LIST -->
                       <!-- DAN MOET DIT WEL TOEGEVOEGD WORDEN AAN DE MODEL EN JSON -->
                     </ul>
@@ -29,6 +37,15 @@
                       <li><h3>Fuel Type: {{ car.fuelType }}</h3></li>
                       <li><h3>Fuel Amount: {{ car.fuelAmount }}L</h3></li>
                     </ul>
+                    <div class="input-group mb-3">
+                      <input type="number" class="form-control" placeholder="New fuel amount" #newFuel aria-label="fuel" aria-describedby="button-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary btn-outline-secondary btnFuel" type="button" id="button-addon2"
+                          (click)="fuel(car,newFuel.value)">
+                          Update
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

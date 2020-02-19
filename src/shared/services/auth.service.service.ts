@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { User } from 'firebase';
 import { Cars, Users } from '../models/user.models';
 import { Observable } from 'rxjs';
-import { tap, map, catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import swal from 'sweetalert2';
 import { async } from '@angular/core/testing';
+
+// Voorlopig disabled, mogelijk in de toekomst nog nodig
+// import { User } from 'firebase';
+// import { auth } from 'firebase/app';
+// import { tap, map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -135,48 +137,21 @@ export class AuthService {
       .get<Users[]>(this.urllocal2)
       .pipe();
   }
-  editCost(value) {
+  editCost(newCost) {
     const headers = new HttpHeaders().set("content", "application/json");
-    return this.http.put(this.urllocal2 + '/' + value.id, value, { headers }).subscribe(
+    return this.http.put(this.urllocal2 + '/' + newCost.id, newCost, { headers }).subscribe(
       data => {
         console.log('Put success ', data);
       }
     );
   }
-  // addUser(value): Observable<any> {
-
-  // }
+  editCar(newCar) {
+    const headers = new HttpHeaders().set("content", "application/json");
+    console.log(newCar.id)
+    return this.http.put(this.urllocal + '/' + newCar.id, newCar, { headers }).subscribe(
+      data => {
+        console.log('Put success ', data);
+      }
+    );
+  }
 }
-
-  // Oude login functie
-  // this.afAuth.authState.subscribe(user => {
-  //   if (user) {
-  //     this.user = user;
-  //     localStorage.setItem('user', JSON.stringify(this.user));
-  //   } else {
-  //     localStorage.setItem('user', null);
-  //   }
-  // });
-
-
-  // Oude login check
-  // get isLoggedIn(): boolean {
-  //   const user = JSON.parse(localStorage.getItem('user'));
-  //   return user !== null;
-  // }
-
-
-  // addUser(user: Users): Observable<Users[]> {
-  //   return this.http
-  //   .post<Users>(this.urllocal2, user)
-  //   .pipe(
-  //     catchError(this.handleError('addUser', user))
-  //   );
-  // }
-  // editCost(value): Observable<any> {
-  //   return this.http
-  //   // .get<Cars>('../../assets/data/cars.json')
-  //   .get<Cars[]>(this.urllocal)
-  //   .pipe();
-  //   // return this.http.delete(this.urllocal+`/${value}`)
-  // }

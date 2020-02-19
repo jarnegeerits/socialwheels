@@ -21,7 +21,7 @@
       "ownerUID": "",
       "car": "Lamborghini Countach",
       "fuelType": "Benzine",
-      "fuelAmount": 35,
+      "fuelAmount": "50",
       "currentPossessUID": "NtArNVTwToYgf2xiy4YKK8MnaOT2"
     }
   ],
@@ -37,7 +37,7 @@
       "id": 2,
       "UID": "NtArNVTwToYgf2xiy4YKK8MnaOT2",
       "userName": "Jarne",
-      "cost": 9990,
+      "cost": 9960,
       "carId": 2
     },
     {

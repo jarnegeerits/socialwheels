@@ -13,24 +13,30 @@ export class UsersComponent implements OnInit {
   public car$: Observable<Cars[]>;
   public user$: Observable<Users[]>;
   public editUser$: Observable<Users>;
+  public editCar$: Observable<Cars>;
   public currentUID$ = '';
   constructor(
     public authService: AuthService,
     public router: Router
   ) { }
 
-  public pay(value1,value2,value3,value4){
-    console.log(value1,'1',value2,'2',value3,'3',value4);
-    console.log(value2.cost);
-    if(value4>0){
-    value2.cost -= value4;
-    this.editUser$ = value2;
-    console.log(this.editUser$);
-    this.authService.editCost(this.editUser$);
+  public pay(userValue, payAmount) {
+    if(payAmount > 0 && payAmount <= userValue.cost){
+      userValue.cost -= payAmount;
+      this.editUser$ = userValue;
+      console.log(this.editUser$);
+      this.authService.editCost(this.editUser$);
     }
   }
 
-
+  public fuel(carValue, newFuel) {
+    if (newFuel >= 0) {
+      carValue.fuelAmount = newFuel;
+      this.editCar$ = carValue;
+      console.log(carValue.id)
+      this.authService.editCar(this.editCar$);
+    }
+  }
 
   ngOnInit() {
     (async () => {
